@@ -50,7 +50,7 @@ window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     
     // Add class 'scrolled' when user scrolls 50px or more
-    if (window.scrollY > 1200) {
+    if (window.scrollY > 1500) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
