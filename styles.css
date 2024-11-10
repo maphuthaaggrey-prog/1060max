@@ -38,6 +38,7 @@ body {
 }
 .icons, nav, .searchimg, .logo, .menu-icon {
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 .logo, .search, .navbar nav ul li {
     transition: .3s ease-in-out;
@@ -61,7 +62,7 @@ body {
 }
 .navbar.scrolled {
     background-color:  rgb(17, 17, 17);
-    position: fixed;
+    
 } 
 .navbar.fix {
     position: fixed;
