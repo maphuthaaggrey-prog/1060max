@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="navbar">
+                <div>
+                    <a href="index.html"><img src="./images/logo.png" class="logo"></a>
+                </div>
+            <nav>
+                <ul>
+                    <li class="active">Home</li>
+                    <li>Visuals</li>
+                    <li>Events</li>
+                </ul>
+            </nav>
+            <div class="searchimg">
+                <img src="./images/Search.png" class="search">
+            </div>
+            <div>
+                <a href="#"><img src="./images/Menu 03.png" class="menu-icon"></a>
+            </div>
+        </div>
+        <section>
+            <img src="./images/homeLogo.png" class="homelogo">
+            <h4>We shine a spotlight on the rich talent, vibrant culture, and exciting events happening in our neighborhood.</h4>
+            <button class="watchbtn">Watch now<img src="./images/icons8-play-50.png" width="17"></button>
+        </section>
+    </div>
+
+    <main>
+        <div class="blog">
+            <div class="sub-heading">
+                <div>
+                    <h3>Top Trending</h3>
+                </div>
+                <div class="scrollbtns">
+                    <button class="scroll-btn left" onclick="scrollToLeft(this)">&#10094;</button>
+                    <button class="scroll-btn right" onclick="scrollToRight(this)">&#10095;</button>
+                </div>
+            </div>
+            <div class="scroll-container">
+                <div class="scroll-content">
+                    <a href="#"><img src="./images/hqdefault (1).webp"></a>
+                    <img src="./images/hqdefault.webp">
+                    <img src="./images/hq720.webp">
+                    <img src="./images/blndD.webp">
+                    <img src="./images/hq720 (1).webp">
+                    <img src="./images/prank.webp">
+                </div>
+            </div>
+        </div>
+        
+        <div class="blog">
+            <div class="sub-heading">
+                <div>
+                    <h3 class="perfomance">Performance Videos</h3>
+                </div>
+                <div class="scrollbtns">
+                    <button class="scroll-btn left" onclick="scrollToLeft(this)">&#10094;</button>
+                    <button class="scroll-btn right" onclick="scrollToRight(this)">&#10095;</button>
+                </div>
+            </div>
+            <div class="scroll-container">
+                <div class="scroll-content">
+                    <img src="./images/dejavu.webp">
+                    <img src="./images/shane.webp">
+                    <img src="./images/pablo.webp">
+                    <img src="./images/jhene.webp">
+                    <img src="./images/sshane.webp">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <img src="./images/homeLogo.png" class="footerlogo">
+            <p class="footer-about">We bring you the best of the hood in one place. Explore exclusive videos showcasing the heart and soul of our community, celebrating the creativity and spirit of our people</p>
+            <div class="line"></div>
+            <p class="footer-about">Terms and Conditions</p>
+            <p class="footer-about">Contact Us</p>
+        </div>
+        <div class="footer-right">
+            <form class="footer">
+                <label for="email">Enter your email</label>
+                <input id="email" type="email" placeholder="Get latest news and updates">
+                <input type="submit" value="Subscribe" name="submit">
+            </form>
+            <div class="footer-icons">
+                <img src ="icons/Facebook.png">
+                <img src ="icons/Instagram.png">
+                <img src ="icons/WhatsApp_black 1.png">
+                <img src ="icons/Gmail_black 1.png">
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
