@@ -5,21 +5,25 @@
     margin: 0%;
     padding: 0%;
     font-size: 12px;
+    box-sizing: border-box; 
 }
-body {
-    background-color: #000000;
+body, html {
+    overflow-x: hidden;
+    background-color:  rgb(3, 3, 3);
 
 }
 :root {
     --tertiary: #b11c1c;
 }
 .hero {
-    background-size: cover;     
+    background-size: cover;
     background-position: center;
-    height: 100vh;    
+    
+    height: 100vh;
     width: 100%;
     top: 0;
-    transition: background-image 2s ease-in-out;  
+    z-index: 999;
+    transition: background-image 2s ease-in-out; /* Smooth transition for the image change */
 }
 .logo {
     margin-left: 3em;
@@ -33,15 +37,63 @@ body {
     display: flex;
     margin: 0 auto;
 }
-.navbar nav ul {
-    display: none;
+
+nav ul {
+
+    position: fixed;
+    z-index: 999;
+    top: 2em;
+    right: 3em;
+    box-shadow: 1px 12px 29px rgba(0, 0, 0, 1);
+    height: 50vh;
+    list-style: none;
+    border-radius: 8px;
+    backdrop-filter: blur(25px);
+    background: rgba(27, 27, 27, 0.5); 
+    width: 75%;
+    margin: auto;
+    text-align: end;
+    color: var(--tertiary);
+    padding: 3em;
+    transform: translateX(140%);
+    transition: transform 0.4s ease-in-out;
+    li {
+        cursor: pointer; 
+        margin: 2em 0;
+        font-weight: 600;
+        &:nth-of-type(1) {
+            margin-bottom: 4em;
+            margin-top: 0;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            padding-right: 1em;
+            padding-top: 2em;
+            &:hover {
+                font-weight: 700;
+            }
+        }
+    }
 }
+.close-btn {
+    margin: -1em;
+}
+
+.open {
+    transform: translateX(0%);
+}
+
+
+
 .icons, nav, .searchimg, .logo, .menu-icon {
     margin-top: 2em;
     margin-bottom: 2em;
 }
 .logo, .search, .navbar nav ul li {
-    transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
 }
 .searchimg {
     display: none;
@@ -55,17 +107,17 @@ body {
     gap: 4em;
     position: fixed;
     top: 0;
-    z-index: 100;
     width: 100%;
-    transition: background-color 0.2s ease;
-}
+    z-index: 100;
+    transition: background-color .3s ease-in-out;
 
+}
 .navbar.scrolled {
-    background-color: rgb(17, 17, 17);
-}
+    background-color:  rgb(17, 17, 17);
+} 
 
 
-.navbar nav ul li:hover, .search:hover, .logo:hover {
+ .logo:hover {
     cursor: pointer;
     transform: scale(1.1);
     color: var(--tertiary);
@@ -73,15 +125,17 @@ body {
 .active {
     border: 2px solid var(--tertiary);
     color: var(--tertiary);
-    width: 25px;
     font-weight: 600;
+    width: 36px;
+    margin-left: auto;
+    text-align: end;
     border-left: none;
     border-right: none;
     border-top: none;
 
 }
 section {
-    padding-top: 11em;
+    padding-top: 10em;
     text-align: center;
     position: sticky;
 
@@ -156,7 +210,7 @@ main {
 }
 .scroll-content img {
     height: 150px;
-    width: 245px;
+    width: 260px;
     background-color: #464646;
     border: none;
     margin-top: 2em;
@@ -266,7 +320,8 @@ footer {
         margin-left: 8em;
     }
     .menu-icon {
-        display: none;
+       display: none;
+       
     }
     .searchimg {
         backdrop-filter: blur(150px);
@@ -292,14 +347,24 @@ footer {
         border-radius: 24px; 
         height: 33px;
         width: 360px;
+        padding: 0;
+        position: unset;
+        transform: translateX(0);
+        transition: transform 0.5s ease-in-out;
+           
     }
     .navbar nav ul li {
         list-style: none;
         display: flex;
         margin: auto;
+        font-weight: normal;
         align-items: center;
         justify-content: center;
     }
+    .navbar nav ul li:nth-of-type(1) {
+            display: none;
+        }
+
     .searchimg .search {
         width: 45%;
        
@@ -309,7 +374,7 @@ footer {
 
     }
     section {
-        padding-top: 10em;
+        padding-top: 15em;
         width: 60%;
         margin-left: 7%;
         text-align: start;
@@ -391,5 +456,20 @@ footer {
     .scroll-content {
         margin: 0 7em 5em;
     }
+
+    .navbar nav ul li:hover, .search:hover, .logo:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        color: var(--tertiary);
+    }
+    .navbar nav ul .active {
+        border: 2px solid var(--tertiary);
+        color: var(--tertiary);
+        width: 25px;
+        font-weight: 700;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+    }    
 
 }
