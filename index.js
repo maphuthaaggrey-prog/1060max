@@ -49,16 +49,11 @@ function scrollToRight(button) {
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
 
-    if (window.scrollY > 750) {
+    if (window.scrollY > 700) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
 
-    // Check if user scrolled more than 5px for fixed positioning
-    if (window.scrollY > 3) {
-        navbar.classList.add('fix');
-    } else {
-        navbar.classList.remove('fix');
-    }
+
 });
