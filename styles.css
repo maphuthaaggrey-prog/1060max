@@ -54,7 +54,8 @@ nav ul {
     color: var(--tertiary);
     padding: 3em;
     transform: translateY(-140%);
-    transition: transform 0.4s ease-in-out;
+    opacity: 0;
+    transition: transform 0.2s ease-in-out, opacity .4s ease-in-out;
     li {
         cursor: pointer; 
         margin: 2em 0;
@@ -81,6 +82,7 @@ nav ul {
 }
 .open {
     transform: translateX(0%);
+    opacity: 100%;
 }
 .icons, nav, .searchimg, .logo, .menu-icon {
     margin-top: 2em;
@@ -337,6 +339,7 @@ footer {
         height: 33px;
         width: 360px;
         padding: 0;
+        opacity: 100%;
         position: unset;
         transform: translateX(0);
         transition: transform 0.5s ease-in-out;
