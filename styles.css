@@ -16,7 +16,8 @@ body {
 .hero {
     background-size: cover;     
     background-position: center;
-    height: 100vh;               
+    height: 100vh;    
+    background-attachment: fixed; 
     width: 100%;
     top: 0;
     transition: background-image 2s ease-in-out;  
