@@ -18,6 +18,7 @@ body, html {
 .hero {
     background-size: cover;
     background-position: center;
+    
     height: 100vh;
     width: 100%;
     top: 0;
@@ -38,6 +39,7 @@ body, html {
 }
 
 nav ul {
+
     position: fixed;
     z-index: 999;
     top: 2em;
@@ -53,6 +55,7 @@ nav ul {
     text-align: end;
     color: var(--tertiary);
     padding: 3em;
+    
     transform: translateY(-140%);
     opacity: 0;
     transition: transform 0.2s ease-in-out, opacity .4s ease-in-out;
@@ -80,10 +83,14 @@ nav ul {
 .close-btn {
     margin: -1em;
 }
+
 .open {
     transform: translateX(0%);
     opacity: 100%;
 }
+
+
+
 .icons, nav, .searchimg, .logo, .menu-icon {
     margin-top: 2em;
     margin-bottom: 2em;
@@ -94,6 +101,8 @@ nav ul {
 .searchimg {
     display: none;
 }
+
+
 .navbar {
     display: flex;
     align-items: center;
@@ -109,7 +118,9 @@ nav ul {
 .navbar.scrolled {
     background-color:  rgb(17, 17, 17);
 } 
-.logo:hover {
+
+
+ .logo:hover {
     cursor: pointer;
     transform: scale(1.1);
     color: var(--tertiary);
@@ -124,9 +135,10 @@ nav ul {
     border-left: none;
     border-right: none;
     border-top: none;
+
 }
 section {
-    padding-top: 16em;
+    padding-top: 18em;
     text-align: center;
     position: sticky;
 
@@ -247,6 +259,9 @@ footer {
     margin: auto;
     text-align: center;
 }
+.footer-left .contactButton {
+    opacity: 1;
+}
 .footer-right form {
     width: 80%;
     margin: auto;
@@ -290,6 +305,11 @@ footer {
 
     width: 100%;
     color: rgb(134, 134, 134);
+
+}
+.about-click {
+    text-decoration: underline;
+    line-height: 35px;
 }
 .line {
     width: 48%;
@@ -297,6 +317,118 @@ footer {
     background-color: #464646;
     margin: 2em auto;
 }
+
+.footer-cont {
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+.footer-cont.open-cont {
+    opacity: 1;
+    pointer-events: auto; /* Enable interaction when visible */
+}
+
+.footer-cont form {
+    width: 80vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 999;
+    font-size: 13px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 12px 29px rgba(0, 0, 0, 2);
+    height: 70vh;
+    list-style: none;
+    border-radius: 8px;
+    backdrop-filter: blur(45px);
+    background: rgba(17, 17, 17, .6); 
+    color: var(--tertiary);
+    padding: 3em;
+}
+  .about-click {
+    cursor: pointer;
+  }
+  .footer-cont .send-message {
+    font-weight: 800;
+    font-size: 17px;
+
+  }
+
+
+  h5 {
+    text-align: center;
+    margin-top: 2em;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.footer-cont fieldset {
+    border: none;
+    padding: 2rem 0;
+    border-bottom: 3px solid #3b3b4f;
+  }
+  .footer-cont form input, textarea {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: var(--tertiary);
+    border-bottom-width: 3px;
+    border-radius: 3px;
+    color: var(--text-color);
+    background-color: var(--background);
+    outline: none;
+}
+.footer-cont form input:active {
+outline: none;
+}
+
+.footer-cont form .submit-btn {
+background-color: var(--tertiary);
+border: none;
+color: white;
+font-weight: 500;
+height: 34px;
+}
+.footer-cont form .submit-btn:hover {
+opacity: 90%;
+cursor: pointer;
+}
+.footer-cont form .submit-btn:active {
+opacity: 70%;
+
+}
+.footer-cont form .error-message {
+color: rgb(226, 66, 66);
+font-size: 10px;
+margin-top: 3px;
+}
+
+.footer-cont form fieldset:last-of-type {
+    border-bottom: none;
+  }
+  
+.footer-cont form label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .footer-cont form input, .footer-cont form 
+  textarea, .footer-cont form 
+  select {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+    color: white;
+  }
+
+
+
+
+
+
+
 @media (min-width: 757px) {
 
     .hero {
@@ -331,20 +463,21 @@ footer {
     .navbar nav ul {
         display: flex;
         color: white;
+        opacity: 100%;
         gap: 1em;
         backdrop-filter: blur(50px);
         box-shadow: 1px 12px 29px rgba(0, 0, 0, .2);
         background: rgba(15, 15, 15, 0.5);
         border-radius: 24px; 
         height: 33px;
-        width: 360px;
+        width: 420px;
         padding: 0;
-        opacity: 100%;
         position: unset;
         transform: translateX(0);
         transition: transform 0.5s ease-in-out;
-           
+
     }
+
     .navbar nav ul li {
         list-style: none;
         display: flex;
@@ -352,6 +485,7 @@ footer {
         font-weight: normal;
         align-items: center;
         justify-content: center;
+
     }
     .navbar nav ul li:nth-of-type(1) {
             display: none;
@@ -463,5 +597,11 @@ footer {
         border-right: none;
         border-top: none;
     }    
+    .footer-cont form {
+        width: 70vw;
+        height: 94vh;
+        padding-bottom: 3em;
+
+    }
 
 }
