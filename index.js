@@ -48,12 +48,14 @@ function scrollToRight(button) {
 
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
+    const targetSection = document.querySelector('.target-section'); // Replace with your section's class or ID
 
-    if (window.scrollY > 700) {
+    const sectionPosition = targetSection.getBoundingClientRect();
+
+    // If the section is at the top of the viewport or partially visible, add the 'scrolled' class
+    if (sectionPosition.top <= 0) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-
-
 });
