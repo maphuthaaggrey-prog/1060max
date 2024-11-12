@@ -53,7 +53,7 @@ nav ul {
     text-align: end;
     color: var(--tertiary);
     padding: 3em;
-    transform: translateX(140%);
+    transform: translateY(-140%);
     transition: transform 0.4s ease-in-out;
     li {
         cursor: pointer; 
