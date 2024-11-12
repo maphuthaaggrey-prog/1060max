@@ -48,22 +48,18 @@ function scrollToRight(button) {
 
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
-    
-    // Add class 'scrolled' when user scrolls 50px or more
+
+    // Check if user scrolled more than 900px
     if (window.scrollY > 900) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
 
-    const nav = document.querySelector('.navbar');
-
+    // Check if user scrolled more than 5px for fixed positioning
     if (window.scrollY > 5) {
-        nav.classList.add('fix');
+        navbar.classList.add('fix');
     } else {
-        nav.classList.remove('fix');
+        navbar.classList.remove('fix');
     }
-
-
-
 });
