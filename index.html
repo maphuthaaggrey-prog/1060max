@@ -22,6 +22,7 @@
                     <li class="active">Home</li>
                     <li>Visuals</li>
                     <li>Events</li>
+                    <li class="contactButton">Contact</li>
                 </ul>
             </nav>
             <div class="searchimg">
@@ -83,14 +84,38 @@
         </div>
 
     </main>
+ <div class="footer-cont" id="footer-cont">
+        <form method="post" action='message.php'>
+            <p class="send-message">Contact Us</p>
+            <fieldset>
+                <label for="first-name">Enter Your Name: <input id="first-name" name="first-name" type="text"
+                        placeholder="Max" />
+
+                </label>
+                <label for="email">Enter Your Email: <input id="email" name="email" type="email"
+                        placeholder="1060max@gmail.com" />
+
+                </label>
+                <label for="phone">Enter Phone number: <input id="phone" name="phone" type="tel"
+                        placeholder="0765216787" />
+
+                </label>
+                <label for="message">Message:
+                    <textarea id="message" name="message" rows="5" cols="30" placeholder="Your Enquiry"></textarea>
+                </label>
+            </fieldset>
+            <input type="submit" value="Submit" name="send-message" class="submit-btn" />
+            <h5 class="cancelBtn">Cancel</h5>
+        </form>        
+        </div>
 
     <footer>
         <div class="footer-left">
             <img src="./images/homeLogo.png" class="footerlogo">
             <p class="footer-about">We bring you the best of the hood in one place. Explore exclusive videos showcasing the heart and soul of our community, celebrating the creativity and spirit of our people</p>
             <div class="line"></div>
-            <p class="footer-about">Terms and Conditions</p>
-            <p class="footer-about">Contact Us</p>
+            <p class="footer-about about-click ">Terms and Conditions</p>
+            <p class="footer-about about-click contactButton">Contact Us</p>
         </div>
         <div class="footer-right">
             <form class="footer">
@@ -105,7 +130,12 @@
                 <img src ="icons/Gmail_black 1.png">
             </div>
         </div>
+
+
     </footer>
+
+    
+
     <script src="index.js"></script>
 </body>
 </html>
