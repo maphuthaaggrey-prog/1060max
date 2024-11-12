@@ -1,49 +1,33 @@
 const images = [
-   
     './images/pexels-wendywei-1190297.jpg',
     './images/1060.jpg'
 ];
-
 
 let slideIndex = 0;
 
 function changeBackground() {
     const heroSection = document.querySelector('.hero');
 
-    // Change the background image with top-to-bottom gradient overlay
-    heroSection.style.backgroundImage = `
-        linear-gradient(to bottom, rgba(0, 0, 0, 5), rgba(0, 0, 0, 0.01)), 
-        url(${images[slideIndex]}
+    heroSection.style.backgroundImage = ` 
+        url(${images[slideIndex]})
     `;
 
-    slideIndex = (slideIndex + 1) % images.length; // Loop back to the first image when reaching the end
+    slideIndex = (slideIndex + 1) % images.length; 
 
-
-    setTimeout(changeBackground, 5000);
+    setTimeout(changeBackground, 5000); 
 }
 
-// Initial call to start the slideshow
 changeBackground();
+
+
 function scrollToLeft(button) {
-    // Find the parent blog section and its scrollable container
     const scrollContainer = button.closest('.blog').querySelector('.scroll-container');
-    
-    // Scroll left by 300 pixels
-    scrollContainer.scrollBy({
-        left: -500, // Move left
-        behavior: 'smooth' // Smooth scrolling effect
-    });
+    scrollContainer.scrollBy({ left: -500, behavior: 'smooth' });
 }
 
 function scrollToRight(button) {
-    // Find the parent blog section and its scrollable container
     const scrollContainer = button.closest('.blog').querySelector('.scroll-container');
-    
-    // Scroll right by 300 pixels
-    scrollContainer.scrollBy({
-        left: 500, // Move right
-        behavior: 'smooth' // Smooth scrolling effect
-    });
+    scrollContainer.scrollBy({ left: 500, behavior: 'smooth' });
 }
 
 window.addEventListener('scroll', function() {
@@ -59,3 +43,32 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('scrolled');
     }
 });
+
+
+const menu = document.querySelector('nav ul');
+const menuBtn = document.querySelector('.menu-icon');
+const closeBtn = document.querySelector('.close-btn');
+
+menuBtn.addEventListener('click', () => {
+    menu.classList.add('open')
+});
+
+closeBtn.addEventListener('click', () => {
+    menu.classList.remove('open')
+});
+
+// Close Menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.matches('.menu-icon')) {
+        closeMenu();
+    }
+});
+
+
+function closeMenu() {
+    menu.classList.remove('open')
+}
+
+
+
+
