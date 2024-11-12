@@ -57,17 +57,16 @@ body {
     top: 0;
     z-index: 100;
     width: 100%;
-    transition: background-color 0.7s ease;
-    transition: position 1s ease-in-out;
+    transition: background-color 0.7s ease, position 1s ease-in-out;
 }
+
 .navbar.scrolled {
-    background-color:  rgb(17, 17, 17);
-    
-} 
+    background-color: rgb(17, 17, 17);
+}
+
 .navbar.fix {
     position: fixed;
-
-} 
+}
 
 .navbar nav ul li:hover, .search:hover, .logo:hover {
     cursor: pointer;
