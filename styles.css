@@ -18,7 +18,6 @@ body, html {
 .hero {
     background-size: cover;
     background-position: center;
-    
     height: 100vh;
     width: 100%;
     top: 0;
@@ -39,7 +38,6 @@ body, html {
 }
 
 nav ul {
-
     position: fixed;
     z-index: 999;
     top: 2em;
@@ -81,13 +79,9 @@ nav ul {
 .close-btn {
     margin: -1em;
 }
-
 .open {
     transform: translateX(0%);
 }
-
-
-
 .icons, nav, .searchimg, .logo, .menu-icon {
     margin-top: 2em;
     margin-bottom: 2em;
@@ -98,8 +92,6 @@ nav ul {
 .searchimg {
     display: none;
 }
-
-
 .navbar {
     display: flex;
     align-items: center;
@@ -115,9 +107,7 @@ nav ul {
 .navbar.scrolled {
     background-color:  rgb(17, 17, 17);
 } 
-
-
- .logo:hover {
+.logo:hover {
     cursor: pointer;
     transform: scale(1.1);
     color: var(--tertiary);
@@ -132,10 +122,9 @@ nav ul {
     border-left: none;
     border-right: none;
     border-top: none;
-
 }
 section {
-    padding-top: 10em;
+    padding-top: 15em;
     text-align: center;
     position: sticky;
 
