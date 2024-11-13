@@ -32,11 +32,10 @@ function scrollToRight(button) {
 
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
-    const targetSection = document.querySelector('.target-section'); // Replace with your section's class or ID
+    const targetSection = document.querySelector('.target-section');
 
     const sectionPosition = targetSection.getBoundingClientRect();
 
-    // If the section is at the top of the viewport or partially visible, add the 'scrolled' class
     if (sectionPosition.top <= 0) {
         navbar.classList.add('scrolled');
     } else {
@@ -95,7 +94,6 @@ function openContact() {
 }
 
 
-// Close Menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!e.target.matches('.menu-icon')
          ) {
