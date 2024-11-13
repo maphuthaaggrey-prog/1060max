@@ -6,11 +6,34 @@
     padding: 0%;
     font-size: 12px;
     box-sizing: border-box; 
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;
 }
+@keyframes opacity {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 body, html {
     overflow-x: hidden;
     background-color:  rgb(3, 3, 3);
+ 
 
+}
+html {
+    scroll-behavior: smooth;
+}
+
+img:hover {
+ transform: scale(1.03);
 }
 :root {
     --tertiary: #b11c1c;
@@ -98,10 +121,59 @@ nav ul {
 .logo, .search, .navbar nav ul li {
     transition: .2s ease-in-out;
 }
+.search:hover, .close-btn:hover {
+    cursor: pointer;
+}
 .searchimg {
-    display: none;
+    margin-right: -5em;
+
 }
 
+.search-bar {
+    width: 90vw;
+    max-width: 700px;
+    min-width: 300px;
+    margin: 5em auto;
+    position: fixed;
+    z-index: 999;
+    font-size: 13px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    box-shadow: 1px 12px 29px rgba(0, 0, 0, 2);
+    list-style: none;
+    border-radius: 8px;
+    backdrop-filter: blur(70px);
+    background: rgba(17, 17, 17, .9); 
+    color: var(--tertiary);
+    padding: 3em;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+.open-search {
+    opacity: 1;
+}
+.search-bar p {
+    display: flex;
+    text-align: end;
+    margin-right: 10px;
+    justify-content: end;
+}
+.search-bar input[type="search"] {
+    width: 100%;
+    height: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: var(--tertiary);
+    border-bottom-width: 3px;
+    border-radius: 3px;
+    background-color: var(--background);
+    outline: none;
+    margin: auto;
+    color: White;
+    padding-left: 2em;
+}
 
 .navbar {
     display: flex;
@@ -141,6 +213,7 @@ section {
     padding-top: 18em;
     text-align: center;
     position: sticky;
+    animation: opacity 1s ease-in-out, transition .3s ease-in-out;
 
 }
 
@@ -237,7 +310,8 @@ main {
 footer {
     background-color: #0c0c0c;
     display: block;
-    padding-bottom: 5em;
+    padding: 4em 0;
+
     padding-top: 3em;
 }
 .footerlogo {
@@ -258,6 +332,9 @@ footer {
     width: 80%;
     margin: auto;
     text-align: center;
+}
+.footer-left .contactButton {
+    opacity: 1;
 }
 .footer-right form {
     width: 80%;
@@ -320,13 +397,11 @@ footer {
     transition: opacity .2s ease-in-out;
     pointer-events: none; /* Prevent interaction when hidden */
 }
-.open-cont {
+.footer-cont.open-cont {
     opacity: 1;
     pointer-events: auto; /* Enable interaction when visible */
 }
-footer-left .contactButton, ul .contactButton {
-    opacity: 1;
-}
+
 .footer-cont form {
     width: 80vw;
     max-width: 500px;
@@ -339,13 +414,74 @@ footer-left .contactButton, ul .contactButton {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 1px 12px 29px rgba(0, 0, 0, 2);
-    height: 70vh;
+    height: 86vh;
     list-style: none;
     border-radius: 8px;
     backdrop-filter: blur(45px);
-    background: rgba(17, 17, 17, .6); 
+    background: rgba(17, 17, 17, .9); 
     color: var(--tertiary);
     padding: 3em;
+}
+.terms h3 {
+    font-size: 13px;
+    margin: 1em 0;
+}
+.terms h1 {
+    font-size: 15px;
+    font-weight: 800;
+    margin: 1em 0;
+    text-decoration: underline;
+}
+.terms p {
+    color: grey;
+    font-size: 12px;
+}
+.terms .terms-agree {
+    text-align: end;
+    margin: 2em;
+}
+.terms .terms-agree button{
+    border: none;
+    background-color: var(--tertiary);
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+    transform: scale(1.01);
+    }
+}
+.terms .terms-agree button a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.terms {
+    width: 85vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 3em auto;
+    position: absolute;
+    z-index: 999;
+    font-size: 13px;
+    top: 0;
+    bottom: 2;
+    left: 50%;
+    transform: translate(-50%, 0);
+    box-shadow: 1px 12px 29px rgba(0, 0, 0, 2);
+    list-style: none;
+    border-radius: 8px;
+    backdrop-filter: blur(45px);
+    background: rgba(17, 17, 17, .9); 
+    color: var(--tertiary);
+    padding: 3em;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+    pointer-events: none; 
+}
+
+.open-terms {
+    opacity: 1;
+    pointer-events: auto; /* Enable interaction when visible */
 }
   .about-click {
     cursor: pointer;
@@ -366,16 +502,16 @@ footer-left .contactButton, ul .contactButton {
 .footer-cont fieldset {
     border: none;
     padding: 2rem 0;
+    padding-bottom: 0;
     border-bottom: 3px solid #3b3b4f;
   }
-  .footer-cont form input, textarea {
+ .footer-cont form input, textarea {
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom-color: var(--tertiary);
     border-bottom-width: 3px;
     border-radius: 3px;
-    color: var(--text-color);
     background-color: var(--background);
     outline: none;
 }
@@ -386,6 +522,7 @@ outline: none;
 .footer-cont form .submit-btn {
 background-color: var(--tertiary);
 border: none;
+margin-top: 0;
 color: white;
 font-weight: 500;
 height: 34px;
@@ -410,6 +547,7 @@ margin-top: 3px;
   
 .footer-cont form label {
     display: block;
+    color: white;
     margin: 0.5rem 0;
   }
 
@@ -598,9 +736,12 @@ margin-top: 3px;
     }    
     .footer-cont form {
         width: 70vw;
-        height: 94vh;
+        height: 90vh;
         padding-bottom: 3em;
 
     }
-
+    .terms {
+        width: 82%;
+        max-width: 757px;
+    }
 }
