@@ -320,7 +320,7 @@ footer {
     transition: opacity .2s ease-in-out;
     pointer-events: none; /* Prevent interaction when hidden */
 }
-footer-cont.open-cont {
+.footer-cont.open-cont {
     opacity: 1;
     pointer-events: auto; /* Enable interaction when visible */
 }
