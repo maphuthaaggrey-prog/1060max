@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <div class="hero">
+    <div class="hero">
         <div class="navbar">
                 <div>
                     <a href="index.html"><img src="./images/logo.png" class="logo"></a>
@@ -28,11 +28,12 @@
             <div class="searchimg">
                 <img src="./images/Search.png" class="search">
             </div>
+           
             <div>
                 <a href="#"><img src="./images/Menu 03.png" class="menu-icon"></a>
             </div>
         </div>
-        <section>
+        <section class="hero-texts">
             <img src="./images/homeLogo.png" class="homelogo">
             <h4>We shine a spotlight on the rich talent, vibrant culture, and exciting events happening in our neighborhood.</h4>
             <button class="watchbtn">Watch now<img src="./images/icons8-play-50.png" width="17"></button>
@@ -84,7 +85,8 @@
         </div>
 
     </main>
- <div class="footer-cont" id="footer-cont">
+
+        <div class="footer-cont" id="footer-cont">
         <form method="post" action='message.php'>
             <p class="send-message">Contact Us</p>
             <fieldset>
@@ -109,18 +111,52 @@
         </form>        
         </div>
 
+
+        <div class="terms">
+            <h1>Terms and Conditions</h1>
+            <br />
+            <p>Welcome to 1060 Max, a platform dedicated to showcasing the creative talents of
+                content creators from Ga Masemola and neighboring areas. 
+                By accessing or using our website, you agree to comply with and be 
+                bound by the following terms and conditions.</p>
+    
+            <h3>Acceptance of Terms</h3>
+            <p>By using this website, you accept and agree to 
+                be bound by these Terms and Conditions. If you do not agree with
+                any part of these terms, you should discontinue use of the website immediately.</p>
+            <h3>Content and Ownership</h3>
+            <p>The creators retain full ownership of their content. You may not modify, copy, reproduce, distribute, or exploit the 
+                content for commercial purposes without explicit permission from
+                the respective content creator.</p>
+            <h3>Intellectual Property Rights</h3>
+            <p>All intellectual property rights, including the design, 
+                layout, look, and feel of the website, are the property 
+                of 1060 Max (Maphutha Aggrey) . Unauthorized use of 
+                the website may give rise to a claim for damages and/or be a criminal offense.</p>
+            <h3>Contact US</h3>
+            <p>If you have any questions or concerns regarding these Terms and Conditions, please <span class="contactButton"><u>contact us</u></span> </p>
+            <p class="terms-agree">I agree to the <Button><a href="">Term and Conditions</a></Button></p>
+        </div>
+
+
+        <div class="search-bar">
+            <p><img src="icons/close.png" class="close-btn"></p>
+            <input type="search" id="search" name="search" placeholder="Search...">
+        </div>
+
     <footer>
         <div class="footer-left">
             <img src="./images/homeLogo.png" class="footerlogo">
             <p class="footer-about">We bring you the best of the hood in one place. Explore exclusive videos showcasing the heart and soul of our community, celebrating the creativity and spirit of our people</p>
             <div class="line"></div>
-            <p class="footer-about about-click ">Terms and Conditions</p>
+            <a href="#"><p class="footer-about about-click termsButton ">Terms and Conditions</p></a>
             <p class="footer-about about-click contactButton">Contact Us</p>
         </div>
         <div class="footer-right">
-            <form class="footer">
+            <form class="footer" id="emailForm">
                 <label for="email">Enter your email</label>
                 <input id="email" type="email" placeholder="Get latest news and updates">
+                <span id="error" style="color:rgb(172, 41, 41);"></span>
                 <input type="submit" value="Subscribe" name="submit">
             </form>
             <div class="footer-icons">
@@ -130,11 +166,8 @@
                 <img src ="icons/Gmail_black 1.png">
             </div>
         </div>
-
-
+        
     </footer>
-
-    
 
     <script src="index.js"></script>
 </body>
