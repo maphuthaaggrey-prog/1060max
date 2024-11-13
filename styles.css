@@ -61,8 +61,8 @@ img:hover {
     margin: 0 auto;
 }
 
-nav ul {
 
+nav ul {
     position: fixed;
     z-index: 999;
     top: 2em;
@@ -78,31 +78,30 @@ nav ul {
     text-align: end;
     color: var(--tertiary);
     padding: 3em;
-    
     transform: translateY(-140%);
     opacity: 0;
     transition: transform 0.2s ease-in-out, opacity .4s ease-in-out;
-    li {
+}
+nav ul li {
         cursor: pointer; 
         margin: 2em 0;
         font-weight: 600;
-        &:nth-of-type(1) {
+        }
+nav ul li:nth-of-type(1) {
             margin-bottom: 4em;
             margin-top: 0;
         }
-        a {
+nav ul li a {
             text-decoration: none;
             color: white;
             font-weight: 600;
             font-size: 1rem;
             padding-right: 1em;
             padding-top: 2em;
-            &:hover {
+}
+nav ul li a:hover {
                 font-weight: 700;
             }
-        }
-    }
-}
 .close-btn {
     margin: -1em;
 }
