@@ -324,7 +324,7 @@ footer {
     opacity: 1;
     pointer-events: auto; /* Enable interaction when visible */
 }
-.contactButton {
+footer-left .contactButton, ul .contactButton {
     opacity: 1;
 }
 .footer-cont form {
