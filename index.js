@@ -56,7 +56,7 @@ const menu = document.querySelector('nav ul');
 const menuBtn = document.querySelector('.menu-icon');
 const closeBtn = document.querySelector('.close-btn');
 const contact = document.querySelector('.footer-cont');
-const contactBtn = document.querySelector('.contactButton');
+const contactBtn = document.querySelectorAll('.contactButton');
 const cancelBtn = document.querySelector('.cancelBtn');
 
 menuBtn.addEventListener('click', () => {
