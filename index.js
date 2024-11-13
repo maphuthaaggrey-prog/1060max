@@ -14,7 +14,7 @@ function changeBackground() {
 
     slideIndex = (slideIndex + 1) % images.length; 
 
-    setTimeout(changeBackground, 5000); 
+    setTimeout(changeBackground, 3000); 
 }
 
 changeBackground();
@@ -44,23 +44,36 @@ window.addEventListener('scroll', function() {
     }
 });
 
-
-
-
-
-
-
-
-
 const menu = document.querySelector('nav ul');
 const menuBtn = document.querySelector('.menu-icon');
 const closeBtn = document.querySelector('.close-btn');
 const contact = document.querySelector('.footer-cont');
 const contactBtn = document.querySelectorAll('.contactButton');
 const cancelBtn = document.querySelector('.cancelBtn');
+const terms = document.querySelector('.terms');
+const termBtn = document.querySelector('.termsButton');
+const closeTerms = document.querySelector('.terms-agree button');
+const searchBtn = document.querySelector('.search');
+const search = document.querySelector('.search-bar');
+const closeSearchBtn = document.querySelector('.search-bar .close-btn');
 
+
+searchBtn.addEventListener('click', () => {
+    search.classList.add('open-search')
+});
+closeSearchBtn.addEventListener('click', () => {
+    search.classList.remove('open-search')
+});
+termBtn.addEventListener('click', () => {
+    terms.classList.add('open-terms')
+});
+closeTerms.addEventListener('click', () => {
+    terms.classList.remove('open-terms')
+});
 menuBtn.addEventListener('click', () => {
     menu.classList.add('open')
+    contact.classList.remove('open-cont')
+    search.classList.remove('open-search')
 });
 
 closeBtn.addEventListener('click', () => {
@@ -70,27 +83,33 @@ cancelBtn.addEventListener('click', () => {
     contact.classList.remove('open-cont')
 });
 
-contactBtn.addEventListener('click', () => {
-    contact.classList.add('open-cont')
-   
+
+
+contactBtn.forEach(button => {
+    button.addEventListener('click', openContact);
 });
 
-contactBtn.addEventListener('touchstart', () => {
-    contact.classList.add('open-cont');
-  
-});
+function openContact() {
+    contact.classList.add('open-cont')
+    menu.classList.remove('open')
+}
+
 
 // Close Menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!e.target.matches('.menu-icon')) {
-        closeMenu();
+    if (!e.target.matches('.menu-icon')
+         ) {
+            menu.classList.remove('open');
+    }
+});
+
+document.addEventListener('click', (e) => {
+    if (!e.target.matches('.termsButton')) {
+        terms.classList.remove('open-terms');
     }
 });
 
 
-function closeMenu() {
-    menu.classList.remove('open')
-}
 
 
 const form = document.querySelector('form');
@@ -102,7 +121,6 @@ form.addEventListener('submit', (e) => {
     const email = document.getElementById('email');
     const phone = document.getElementById('phone');
     const message = document.getElementById('message');
-
     let valid = true; 
 
     if (firstName.value.trim() === '') {
